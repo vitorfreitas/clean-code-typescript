@@ -70,7 +70,7 @@ function between<T>(value: T, left: T, right: T) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use nomes pronunciáveis
 
@@ -97,7 +97,7 @@ class Customer {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use o mesmo vocabulário para o mesmo tipo de variável
 
@@ -115,7 +115,7 @@ function getUserData(): User;
 function getUser(): User;
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use nomes fáceis de pesquisar
 
@@ -137,7 +137,7 @@ const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 setTimeout(restart, MILLISECONDS_IN_A_DAY);
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use variáveis explicativas
 
@@ -161,7 +161,7 @@ for (const [id, user] of users) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite mapear mentalmente
 
@@ -184,7 +184,7 @@ const subscription = getSubscription();
 const transaction = charge(user, subscription);
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não adicione contextos desnecessários
 
@@ -220,7 +220,7 @@ function print(car: Car): void {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use argumentos padrões ao invés de encadear condicionais
 
@@ -243,7 +243,7 @@ function loadPages(count: number = 10) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Funções
 
@@ -329,7 +329,7 @@ createMenu({
 });
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Funções devem fazer somente uma coisa
 
@@ -361,7 +361,7 @@ function isActiveClient(client: Client) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Nomes das funções devem dizer o que elas fazem
 
@@ -389,7 +389,7 @@ const date = new Date();
 addMonthToDate(date, 1);
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Funções devem estar em apenas um nível de abstração
 
@@ -461,7 +461,7 @@ function parse(tokens: Token[]): SyntaxTree {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Remove código duplicado
 
@@ -552,7 +552,7 @@ function showEmployeeList(employee: Developer | Manager) {
 
 Você deve ser duro quando o assunto for código duplicado. As vezes há uma troca entre código duplicado e complexidade aumentada quando introduz abstrações desnecessárias. Quando duas implementações de módulos diferentes se parecem bastante mas vivem em diferentes lugares, código duplicado pode ser aceitável e preferível à extrair para um código comum entre os lugares. Nesse caso, o código que seria extraido iria criar uma dependência indireta entre os dois módulos.
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Define objetos padrões utilizando Object.assign ou desestruturação
 
@@ -633,7 +633,7 @@ createMenu({body: 'Bar'});
 
 Para evitar efeitos colaterais e comportamentos indesejados ao passar explicitamente `undefined` ou `null`, você pode dizer ao compilador TypeScript para não permitir isso. Veja mais em [`--strictNullChecks`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#--strictnullchecks).
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não use flags como parâmetros de funções
 
@@ -664,7 +664,7 @@ function createTempFile(name: string) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite efeitos colaterais (parte 1)
 
@@ -709,7 +709,7 @@ const encodedName = toBase64(name);
 console.log(name);
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite efeitos colaterais (parte 2)
 
@@ -741,7 +741,7 @@ function addItemToCart(cart: CartItem[], item: Item): CartItem[] {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não escreva em funções globais
 
@@ -775,7 +775,7 @@ class MyArray<T> extends Array<T> {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Priorize programação funcional à programação imperativa
 
@@ -838,7 +838,7 @@ const totalOutput = contributions.reduce(
 );
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Encapsular condicionais
 
@@ -862,7 +862,7 @@ if (canActivateService(subscription, account)) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite condicionais negativas
 
@@ -890,7 +890,7 @@ if (!isEmailUsed(node)) {
 }
 ```
 
-**[⬆ Ir para o topo](#table-of-contents)**
+**[⬆ Ir para o topo](#conteúdos)**
 
 ### Evite condicionais
 
@@ -947,7 +947,7 @@ class Cessna extends Airplane {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite verificação de tipo
 
@@ -977,7 +977,7 @@ function travelToTexas(vehicle: Vehicle) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não otimize demais
 
@@ -1002,7 +1002,7 @@ for (let i = 0; i < list.length; i++) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Remover código morto
 
@@ -1035,7 +1035,7 @@ const req = requestModule;
 inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use iterators e generators
 
@@ -1115,7 +1115,7 @@ itiriri(fibonacci())
   .forEach(fib => console.log(fib));
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Objetos e estruturas de dados
 
@@ -1174,7 +1174,7 @@ const account = new BankAccount();
 account.balance = 100;
 ```
 
-**[⬆ Ir para o topo](#table-of-contents)**
+**[⬆ Ir para o topo](#conteúdos)**
 
 ### Fazer objetos ter membros privados/protegidos
 
@@ -1216,7 +1216,7 @@ class Circle {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Prefira propriedades de apenas leitura
 
@@ -1246,7 +1246,7 @@ interface Config {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Classes
 
@@ -1323,7 +1323,7 @@ class Dashboard {
 // ...
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Classes coesas e desacopladas
 
@@ -1401,7 +1401,7 @@ class UserNotifier {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Prefira composição à herança
 
@@ -1462,7 +1462,7 @@ class EmployeeTaxData {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use cadeia de métodos
 
@@ -1544,7 +1544,7 @@ const query = new QueryBuilder()
   .build();
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## SOLID
 
@@ -1596,7 +1596,7 @@ class UserSettings {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Prinpio do Aberto/Fechado (Open/Closed Principle)
 
@@ -1685,7 +1685,7 @@ class HttpRequester {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Principios da Substituição de Liskov (Liskov Substitution Principle)
 
@@ -1791,7 +1791,7 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Principio da Segragação de Interface (PSI)
 
@@ -1874,7 +1874,7 @@ class EconomicPrinter implements IPrinter {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Princípio da Inversão de Dependência (DIP) (Dependency Inversion Principle)
 
@@ -1972,7 +1972,7 @@ const reader = new ReportReader(new JsonFormatter());
 await report = await reader.read('report.json');
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Testar
 
@@ -1989,7 +1989,7 @@ Não há desculpas para não escrever testes. Há uma vasta leva de frameworks p
 
 3. Você não pode esrever mais de um código de produção do que o suficiente para passar o teste unitário que falhou.
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Regras F.I.R.S.T
 
@@ -2005,7 +2005,7 @@ Testes limpos devem seguir essas regras:
 
 - **Timely - Pontuais** testes unitários devem ser escritos antes do código de produção. se você escrever depois, pode parar muito complicado escrever testes.
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Único conceito por teste
 
@@ -2061,7 +2061,7 @@ describe('AwesomeDate', () => {
 });
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### O nome do teste deve revelar sua intenção
 
@@ -2095,7 +2095,7 @@ describe('Calendar', () => {
 });
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Concorrência
 
@@ -2176,7 +2176,7 @@ Promises suportam alguns padrões que podem ser úteis em alguns casos:
 
 `Promise.all` is especially useful when there is a need to run tasks in parallel. `Promise.race` makes it easier to implement things like timeouts for promises.
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Async/Await são ainda mais claros do que Promises
 
@@ -2230,7 +2230,7 @@ try {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Tratamento de erros
 
@@ -2295,7 +2295,7 @@ function calculateTotal(items: Item[]): Failable<number, 'empty'> {
 
 Para entender mais disso, leia a [publicação original](https://medium.com/@dhruvrajvanshi/making-exceptions-type-safe-in-typescript-c4d200ee78e9).
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não ignore erros capturados
 
@@ -2331,7 +2331,7 @@ try {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não ignore promises rejeitadas
 
@@ -2372,7 +2372,7 @@ try {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Formatação
 
@@ -2435,7 +2435,7 @@ class Container {}
 Use `PascalCase` para classes, interfaces, tipos e namespaces.
 Use `camelCase` para variáveis, funções e classes.
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Function callers and callees should be close
 
@@ -2525,7 +2525,7 @@ const review = new PerformanceReview(employee);
 review.review();
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### type vs. interface
 
@@ -2584,7 +2584,7 @@ class Square implements Shape {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Organize imports
 
@@ -2630,7 +2630,7 @@ import {ApiCredentials, Adapters} from './common/api/authorization';
 import {ConfigPlugin} from './plugins/config/configPlugin';
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Use alias do typescript
 
@@ -2664,7 +2664,7 @@ import {UserService} from '@services/UserService';
 ...
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ## Comentários
 
@@ -2694,7 +2694,7 @@ if (isSubscriptionActive) {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não deixe código comentado na sua base de código (codebase)
 
@@ -2720,7 +2720,7 @@ class User {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Não tenha códigos que marcam datas
 
@@ -2748,7 +2748,7 @@ function combine(a: number, b: number): number {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Evite marcadores posicionados
 
@@ -2810,7 +2810,7 @@ class Client {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 ### Comentários de TODO
 
@@ -2836,6 +2836,6 @@ function getActiveSubscriptions(): Promise<Subscription[]> {
 }
 ```
 
-**[⬆ ir para o topo](#table-of-contents)**
+**[⬆ ir para o topo](#conteúdos)**
 
 Um grande obrigado ao meu amigo [Luís Gustavo](https://github.com/lgustavogdc) que me deu uma força ao traduzir esse conteúdo maravilhoso!
