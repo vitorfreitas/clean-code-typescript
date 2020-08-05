@@ -1593,7 +1593,7 @@ class UserSettings {
 
 **[⬆ ir para o topo](#table-of-contents)**
 
-### Prinpio do Aberto/Fechado (Open/Closed Principle)
+### Principio do Aberto/Fechado (Open/Closed Principle)
 
 Como dito por Bertrand Meyer, "entidades em software (classes, módulos, funções, etc.) devem ser abertas para extenções, mas fechadas para modificações." Mas o que isso significa? Este princípio diz, basicamente, que você deve permitir que seus usuários adicionem novas funcionalidades sem alterar código já existente.
 
@@ -1788,9 +1788,9 @@ renderLargeShapes(shapes);
 
 **[⬆ ir para o topo](#table-of-contents)**
 
-### Principio da Segragação de Interface (PSI)
+### Principio da Segregação de Interface (ISP) (Interface Segregation Principle)
 
-PSI afima que "Clientes não deveriam ser forçados a serem dependentes de interfaces que eles não usam". Esse princípio é muito relacionado ao Princípio da única responsabilidade.
+ISP afima que "Clientes não deveriam ser forçados a serem dependentes de interfaces que eles não usam". Esse princípio é muito relacionado ao Princípio da única responsabilidade.
 O que isso realmente significa é que você deve sempre projetar suas abstrações de uma maneira que os clientes que estão usando os métodos expostos não obtenham a "a torta inteira". Isto também inclui aos clientes o dever implementar metódos que eles, na realidade, não precisam.
 
 **Ruim:**
