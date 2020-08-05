@@ -1898,14 +1898,14 @@ type ReportData = {
 
 class XmlFormatter {
   parse<T>(content: string): T {
-    // Converts an XML string to an object T
+    // Converte uma string XML em um objeto T
   }
 }
 
 class ReportReader {
 
-  // BAD: We have created a dependency on a specific request implementation.
-  // We should just have ReportReader depend on a parse method: `parse`
+  // RUIM: Criamos uma dependência em uma implementação de solicitação específica.
+  // Devemos fazer com que o ReportReader dependa de um método de análise: `parse`
   private readonly formatter = new XmlFormatter();
 
   async read(path: string): Promise<ReportData> {
@@ -1937,14 +1937,14 @@ interface Formatter {
 
 class XmlFormatter implements Formatter {
   parse<T>(content: string): T {
-    // Converts an XML string to an object T
+    // Converte uma string XML em um objeto T
   }
 }
 
 
 class JsonFormatter implements Formatter {
   parse<T>(content: string): T {
-    // Converts a JSON string to an object T
+    // Converte uma string JSON em um objeto T
   }
 }
 
@@ -1963,7 +1963,7 @@ class ReportReader {
 const reader = new ReportReader(new XmlFormatter());
 await report = await reader.read('report.xml');
 
-// or if we had to read a json report:
+// ou se tivéssemos que ler um relatório json:
 const reader = new ReportReader(new JsonFormatter());
 await report = await reader.read('report.json');
 ```
