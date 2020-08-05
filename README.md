@@ -985,8 +985,8 @@ Navegadores modernos fazem muita otimização por baixo dos panos na hora da exe
 **Ruim:**
 
 ```ts
-// On old browsers, each iteration with uncached `list.length` would be costly
-// because of `list.length` recomputation. In modern browsers, this is optimized.
+// Em navegadores antigos, cada iteração com `list.length` não armazenada em cache seria cara.
+// graças a necessidade de recalcular `list.length`. Em navegadores modernos, isso é otimizado.
 for (let i = 0, len = list.length; i < len; i++) {
   // ...
 }
