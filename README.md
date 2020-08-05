@@ -678,24 +678,24 @@ O ponto principal é evitar alguns vacilos como compartilhar o estado entre dois
 **Ruim:**
 
 ```ts
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
+// Variável global referenciada pela seguinte função.
+// Se tivéssemos outra função que usasse esse nome, agora seria um array e poderia quebrar o código.
 let name = 'Robert C. Martin';
 
 function toBase64() {
   name = btoa(name);
 }
 
-toBase64(); // produces side effects to `name` variable
+toBase64(); // Produz efeito colateral na variável `name`.
 
-console.log(name); // expected to print 'Robert C. Martin' but instead 'Um9iZXJ0IEMuIE1hcnRpbg=='
+console.log(name); // Deveria printar 'Robert C. Martin' ao invés disso printou 'Um9iZXJ0IEMuIE1hcnRpbg=='
 ```
 
 **Bom:**
 
 ```ts
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
+// Variável global referenciada pela seguinte função.
+// Se tivéssemos outra função que usasse esse nome, agora seria um array e poderia quebrar o código.
 const name = 'Robert C. Martin';
 
 function toBase64(text: string): string {
