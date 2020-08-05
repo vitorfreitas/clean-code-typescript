@@ -1998,7 +1998,7 @@ Testes limpos devem seguir essas regras:
 
 - **Self-Validating - Auto-validado** um teste devem responder com _Passed_ ou _Failed_. Você não tem que comparar com arquivos de log para saber se passaram ou não.
 
-- **Timely - Pontuais** testes unitários devem ser escritos antes do código de produção. se você escrever depois, pode parar muito complicado escrever testes.
+- **Timely - Pontuais** testes unitários devem ser escritos antes do código de produção. se você escrever depois, pode achar muito complicado escrever testes.
 
 **[⬆ ir para o topo](#table-of-contents)**
 
@@ -2162,14 +2162,14 @@ downloadPage(
 
 Promises suportam alguns padrões que podem ser úteis em alguns casos:
 
-| Padrão                   | Descrição                                                                                                                                                           |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Promise.resolve(value)` | Converte um valor para uma promise resolvida.                                                                                                                       |
-| `Promise.reject(error)`  | Converte um erro para uma promise rejeitada.                                                                                                                        |
-| `Promise.all(promises)`  | Retorna uma nova promise, que é preenchida com um array of fulfillment values for the passed promises or rejects with the reason of the first promise that rejects. |
-| `Promise.race(promises)` | Returns a new promise which is fulfilled/rejected with the result/error of the first settled promise from the array of passed promises.                             |
+| Padrão                   | Descrição                                                                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Promise.resolve(value)` | Converte um valor para uma promise resolvida.                                                                                                                                                                                          |
+| `Promise.reject(error)`  | Converte um erro para uma promise rejeitada.                                                                                                                                                                                           |
+| `Promise.all(promises)`  | Retorna uma única Promise que resolve quando todas as promises no argumento iterável forem resolvidas ou quando o iterável passado como argumento não contém promises. É rejeitado com o motivo da primeira promise que foi rejeitada. |
+| `Promise.race(promises)` | Retorna uma promise que resolve ou rejeita assim que uma das promises no parametro iterável resolver ou rejeitar, com o valor ou razão daquela promise.                                                                                |
 
-`Promise.all` is especially useful when there is a need to run tasks in parallel. `Promise.race` makes it easier to implement things like timeouts for promises.
+`Promise.all` É especialmente útil quando se faz necessários rodar tarefas as paralelo. `Promise.race` facilita a implementação de funcionalidades como tempo limite para promises.
 
 **[⬆ ir para o topo](#table-of-contents)**
 
