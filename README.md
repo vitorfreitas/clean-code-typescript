@@ -1127,7 +1127,7 @@ Usar getters e setters para acessar dados de objetos que encapsulam comportament
 - Faz adicionar validação simples quando está setando.
 - Encapsula a representação interna;
 - Fácil de adicionar logging e tratamento de erros quando usar get e set.
-- Você pode carregar preguiçosamente as propriedades do seu objeto, vamos dizer pegar de um servido.
+- Você pode carregar preguiçosamente (lazy loading) as propriedades do seu objeto, vamos dizer pegar de um servido.
 
 **Ruim:**
 
@@ -1217,9 +1217,6 @@ class Circle {
 **[⬆ ir para o topo](#table-of-contents)**
 
 ### Prefira propriedades de apenas leitura
-
-TypeScript's type system allows you to mark individual properties on an interface / class as readonly. This allows you to work in a functional way (unexpected mutation is bad).
-For more advanced scenarios there is a built-in type `Readonly` that takes a type `T` and marks all of its properties as readonly using mapped types (see [mapped types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)).
 
 O sistema de tipagem do TypeScript permite que você marque propriedades individuais em uma interface/classe como de apenas leitura. Isso permite que você trabalhe de uma maneira funcional (mutações inesperadas são ruins).
 Para cenários mais avançados há um tipo integrado `Readonly` que recebe um tipo `T` e marca todas suas propriedades como de apenas leitura, usando tipos mapeados (mapped types) (veja [mapped types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)).
