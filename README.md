@@ -124,14 +124,14 @@ Nós vamos ler mais código do que escrever. É importante que o código que esc
 **Ruim:**
 
 ```ts
-// What the heck is 86400000 for?
+// O que 86400000 quer dizer?
 setTimeout(restart, 86400000);
 ```
 
 **Bom:**
 
 ```ts
-// Declare them as capitalized named constants.
+// Declare nomes de constantes em maiúsculo.
 const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 
 setTimeout(restart, MILLISECONDS_IN_A_DAY);
@@ -147,7 +147,7 @@ setTimeout(restart, MILLISECONDS_IN_A_DAY);
 declare const users: Map<string, User>;
 
 for (const keyValue of users) {
-  // iterate through users map
+  // Itere através do Map de users.
 }
 ```
 
