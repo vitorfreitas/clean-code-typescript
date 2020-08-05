@@ -266,7 +266,7 @@ Aqui vão algumas vantagens:
 
 1. Quando alguém olhar a assinatura da função, imediatamente será claro quais propriedades estão sendo usadas.
 
-2. Desestruturação também clone os valores primitivos especificados do objeto passado como argumento para a função. Isso ajuda a evitar efeitos colaterais. Nota: Objetos e Arrays que são desestruturados do objeto _argument_ não são clonados.
+2. Desestruturação também clona os valores primitivos especificados do objeto passado como argumento para a função. Isso ajuda a evitar efeitos colaterais. Nota: Objetos e Arrays que são desestruturados do objeto _argument_ não são clonados.
 
 3. TypeScript irá te avisar quando haver propriedades não utilizadas, o que seria impossivel sem usar desestruturação.
 
@@ -949,7 +949,7 @@ class Cessna extends Airplane {
 
 ### Evite verificação de tipo
 
-TypeScript é um superconjunto sintático estrito de JavaScript e adciona verificação de tipo estático para a linguagem.
+TypeScript é um superconjunto sintático estrito de JavaScript e adiciona verificação de tipo estático para a linguagem.
 Prefira sempre especificar tipos de variáveis, parâmetros e retornar valores para aproveitar todo o potencial dos recursos do TypeScript.
 Isso torna refatoração mais fácil.
 
