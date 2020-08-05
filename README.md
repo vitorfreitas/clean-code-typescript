@@ -124,14 +124,14 @@ Nós vamos ler mais código do que escrever. É importante que o código que esc
 **Ruim:**
 
 ```ts
-// What the heck is 86400000 for?
+// O que 86400000 quer dizer?
 setTimeout(restart, 86400000);
 ```
 
 **Bom:**
 
 ```ts
-// Declare them as capitalized named constants.
+// Declare nomes de constantes em maiúsculo.
 const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 
 setTimeout(restart, MILLISECONDS_IN_A_DAY);
@@ -147,7 +147,7 @@ setTimeout(restart, MILLISECONDS_IN_A_DAY);
 declare const users: Map<string, User>;
 
 for (const keyValue of users) {
-  // iterate through users map
+  // Itere através do Map de users.
 }
 ```
 
@@ -187,8 +187,6 @@ const transaction = charge(user, subscription);
 **[⬆ ir para o topo](#table-of-contents)**
 
 ### Não adicione contextos desnecessários
-
-If your class/object name tells you something, don't repeat that in your variable name.
 
 Se o nome da sua classe/objeto expressa algo, não repita isso no nome da variável.
 
@@ -268,7 +266,7 @@ Aqui vão algumas vantagens:
 
 1. Quando alguém olhar a assinatura da função, imediatamente será claro quais propriedades estão sendo usadas.
 
-2. Desestruturação também clone os valores primitivos especificados do objeto passado como argumento para a função. Isso ajuda a evitar efeitos colaterais. Nota: Objetos e Arrays que são desestruturados do objeto _argument_ não são clonados.
+2. Desestruturação também clona os valores primitivos especificados do objeto passado como argumento para a função. Isso ajuda a evitar efeitos colaterais. Nota: Objetos e Arrays que são desestruturados do objeto _argument_ não são clonados.
 
 3. TypeScript irá te avisar quando haver propriedades não utilizadas, o que seria impossivel sem usar desestruturação.
 
@@ -680,24 +678,24 @@ O ponto principal é evitar alguns vacilos como compartilhar o estado entre dois
 **Ruim:**
 
 ```ts
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
+// Variável global referenciada pela seguinte função.
+// Se tivéssemos outra função que usasse esse nome, agora seria um array e poderia quebrar o código.
 let name = 'Robert C. Martin';
 
 function toBase64() {
   name = btoa(name);
 }
 
-toBase64(); // produces side effects to `name` variable
+toBase64(); // Produz efeito colateral na variável `name`.
 
-console.log(name); // expected to print 'Robert C. Martin' but instead 'Um9iZXJ0IEMuIE1hcnRpbg=='
+console.log(name); // Deveria printar 'Robert C. Martin' ao invés disso printou 'Um9iZXJ0IEMuIE1hcnRpbg=='
 ```
 
 **Bom:**
 
 ```ts
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
+// Variável global referenciada pela seguinte função.
+// Se tivéssemos outra função que usasse esse nome, agora seria um array e poderia quebrar o código.
 const name = 'Robert C. Martin';
 
 function toBase64(text: string): string {
@@ -951,7 +949,7 @@ class Cessna extends Airplane {
 
 ### Evite verificação de tipo
 
-TypeScript é um superconjunto sintático estrito de JavaScript e adciona verificação de tipo estático para a linguagem.
+TypeScript é um superconjunto sintático estrito de JavaScript e adiciona verificação de tipo estático para a linguagem.
 Prefira sempre especificar tipos de variáveis, parâmetros e retornar valores para aproveitar todo o potencial dos recursos do TypeScript.
 Isso torna refatoração mais fácil.
 
@@ -987,8 +985,8 @@ Navegadores modernos fazem muita otimização por baixo dos panos na hora da exe
 **Ruim:**
 
 ```ts
-// On old browsers, each iteration with uncached `list.length` would be costly
-// because of `list.length` recomputation. In modern browsers, this is optimized.
+// Em navegadores antigos, cada iteração com `list.length` não armazenada em cache seria cara.
+// graças a necessidade de recalcular `list.length`. Em navegadores modernos, isso é otimizado.
 for (let i = 0, len = list.length; i < len; i++) {
   // ...
 }
@@ -1129,7 +1127,7 @@ Usar getters e setters para acessar dados de objetos que encapsulam comportament
 - Faz adicionar validação simples quando está setando.
 - Encapsula a representação interna;
 - Fácil de adicionar logging e tratamento de erros quando usar get e set.
-- Você pode carregar preguiçosamente as propriedades do seu objeto, vamos dizer pegar de um servido.
+- Você pode carregar preguiçosamente (lazy loading) as propriedades do seu objeto, vamos dizer pegar de um servido.
 
 **Ruim:**
 
@@ -1219,9 +1217,6 @@ class Circle {
 **[⬆ ir para o topo](#table-of-contents)**
 
 ### Prefira propriedades de apenas leitura
-
-TypeScript's type system allows you to mark individual properties on an interface / class as readonly. This allows you to work in a functional way (unexpected mutation is bad).
-For more advanced scenarios there is a built-in type `Readonly` that takes a type `T` and marks all of its properties as readonly using mapped types (see [mapped types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)).
 
 O sistema de tipagem do TypeScript permite que você marque propriedades individuais em uma interface/classe como de apenas leitura. Isso permite que você trabalhe de uma maneira funcional (mutações inesperadas são ruins).
 Para cenários mais avançados há um tipo integrado `Readonly` que recebe um tipo `T` e marca todas suas propriedades como de apenas leitura, usando tipos mapeados (mapped types) (veja [mapped types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)).
@@ -1338,10 +1333,11 @@ Um bom design de software tem **coesão** e **desacoplamento**
 
 ```ts
 class UserManager {
-  // Bad: each private variable is used by one or another group of methods.
-  // It makes clear evidence that the class is holding more than a single responsibility.
-  // If I need only to create the service to get the transactions for a user,
-  // I'm still forced to pass and instance of emailSender.
+  // Ruim: cada variável privada é usada por um ou outro grupo de métodos.
+  // Isso é uma evidência clara de que a classe está mantendo mais do que uma única responsabilidade.
+  // Se eu precisar apenas criar o serviço para obter as transactions para um user, 
+  // Ainda sou obrigado a passar e a instância do emailSender.
+
   constructor(
     private readonly db: Database,
     private readonly emailSender: EmailSender,
@@ -1598,7 +1594,7 @@ class UserSettings {
 
 **[⬆ ir para o topo](#table-of-contents)**
 
-### Prinpio do Aberto/Fechado (Open/Closed Principle)
+### Principio do Aberto/Fechado (Open/Closed Principle)
 
 Como dito por Bertrand Meyer, "entidades em software (classes, módulos, funções, etc.) devem ser abertas para extenções, mas fechadas para modificações." Mas o que isso significa? Este princípio diz, basicamente, que você deve permitir que seus usuários adicionem novas funcionalidades sem alterar código já existente.
 
@@ -1793,9 +1789,9 @@ renderLargeShapes(shapes);
 
 **[⬆ ir para o topo](#table-of-contents)**
 
-### Principio da Segragação de Interface (PSI)
+### Principio da Segregação de Interface (ISP) (Interface Segregation Principle)
 
-PSI afima que "Clientes não deveriam ser forçados a serem dependentes de interfaces que eles não usam". Esse princípio é muito relacionado ao Princípio da única responsabilidade.
+ISP afima que "Clientes não deveriam ser forçados a serem dependentes de interfaces que eles não usam". Esse princípio é muito relacionado ao Princípio da única responsabilidade.
 O que isso realmente significa é que você deve sempre projetar suas abstrações de uma maneira que os clientes que estão usando os métodos expostos não obtenham a "a torta inteira". Isto também inclui aos clientes o dever implementar metódos que eles, na realidade, não precisam.
 
 **Ruim:**
@@ -1902,14 +1898,14 @@ type ReportData = {
 
 class XmlFormatter {
   parse<T>(content: string): T {
-    // Converts an XML string to an object T
+    // Converte uma string XML em um objeto T
   }
 }
 
 class ReportReader {
 
-  // BAD: We have created a dependency on a specific request implementation.
-  // We should just have ReportReader depend on a parse method: `parse`
+  // RUIM: Criamos uma dependência em uma implementação de solicitação específica.
+  // Devemos fazer com que o ReportReader dependa de um método de análise: `parse`
   private readonly formatter = new XmlFormatter();
 
   async read(path: string): Promise<ReportData> {
@@ -1941,14 +1937,14 @@ interface Formatter {
 
 class XmlFormatter implements Formatter {
   parse<T>(content: string): T {
-    // Converts an XML string to an object T
+    // Converte uma string XML em um objeto T
   }
 }
 
 
 class JsonFormatter implements Formatter {
   parse<T>(content: string): T {
-    // Converts a JSON string to an object T
+    // Converte uma string JSON em um objeto T
   }
 }
 
@@ -1967,7 +1963,7 @@ class ReportReader {
 const reader = new ReportReader(new XmlFormatter());
 await report = await reader.read('report.xml');
 
-// or if we had to read a json report:
+// ou se tivéssemos que ler um relatório json:
 const reader = new ReportReader(new JsonFormatter());
 await report = await reader.read('report.json');
 ```
@@ -2003,7 +1999,7 @@ Testes limpos devem seguir essas regras:
 
 - **Self-Validating - Auto-validado** um teste devem responder com _Passed_ ou _Failed_. Você não tem que comparar com arquivos de log para saber se passaram ou não.
 
-- **Timely - Pontuais** testes unitários devem ser escritos antes do código de produção. se você escrever depois, pode parar muito complicado escrever testes.
+- **Timely - Pontuais** testes unitários devem ser escritos antes do código de produção. se você escrever depois, pode achar muito complicado escrever testes.
 
 **[⬆ ir para o topo](#table-of-contents)**
 
@@ -2167,14 +2163,14 @@ downloadPage(
 
 Promises suportam alguns padrões que podem ser úteis em alguns casos:
 
-| Padrão                   | Descrição                                                                                                                                                           |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Promise.resolve(value)` | Converte um valor para uma promise resolvida.                                                                                                                       |
-| `Promise.reject(error)`  | Converte um erro para uma promise rejeitada.                                                                                                                        |
-| `Promise.all(promises)`  | Retorna uma nova promise, que é preenchida com um array of fulfillment values for the passed promises or rejects with the reason of the first promise that rejects. |
-| `Promise.race(promises)` | Returns a new promise which is fulfilled/rejected with the result/error of the first settled promise from the array of passed promises.                             |
+| Padrão                   | Descrição                                                                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Promise.resolve(value)` | Converte um valor para uma promise resolvida.                                                                                                                                                                                          |
+| `Promise.reject(error)`  | Converte um erro para uma promise rejeitada.                                                                                                                                                                                           |
+| `Promise.all(promises)`  | Retorna uma única Promise que resolve quando todas as promises no argumento iterável forem resolvidas ou quando o iterável passado como argumento não contém promises. É rejeitado com o motivo da primeira promise que foi rejeitada. |
+| `Promise.race(promises)` | Retorna uma promise que resolve ou rejeita assim que uma das promises no parametro iterável resolver ou rejeitar, com o valor ou razão daquela promise.                                                                                |
 
-`Promise.all` is especially useful when there is a need to run tasks in parallel. `Promise.race` makes it easier to implement things like timeouts for promises.
+`Promise.all` É especialmente útil quando se faz necessários rodar tarefas as paralelo. `Promise.race` facilita a implementação de funcionalidades como tempo limite para promises.
 
 **[⬆ ir para o topo](#table-of-contents)**
 
@@ -2218,7 +2214,7 @@ async function downloadPage(url: string, saveTo: string): Promise<string> {
   return response;
 }
 
-// somewhere in an async function (Alguma parte de uma função async)
+// Alguma parte de uma função async
 try {
   const content = await downloadPage(
     'https://en.wikipedia.org/wiki/Robert_Cecil_Martin',
@@ -2436,8 +2432,6 @@ Use `PascalCase` para classes, interfaces, tipos e namespaces.
 Use `camelCase` para variáveis, funções e classes.
 
 **[⬆ ir para o topo](#table-of-contents)**
-
-### Function callers and callees should be close
 
 ### Funções que chamam outras funções, ou que são chamadas, devem estar próximas uma das outras.
 
