@@ -2432,8 +2432,6 @@ Use `camelCase` para variáveis, funções e classes.
 
 **[⬆ ir para o topo](#table-of-contents)**
 
-### Function callers and callees should be close
-
 ### Funções que chamam outras funções, ou que são chamadas, devem estar próximas uma das outras.
 
 Se uma função chama outra, mantenha essas funções verticalmente perto no seu arquivo. Idealmente, mantenha a função que chama a outra, logo acima da função chamada.
