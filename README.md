@@ -1333,10 +1333,11 @@ Um bom design de software tem **coesão** e **desacoplamento**
 
 ```ts
 class UserManager {
-  // Bad: each private variable is used by one or another group of methods.
-  // It makes clear evidence that the class is holding more than a single responsibility.
-  // If I need only to create the service to get the transactions for a user,
-  // I'm still forced to pass and instance of emailSender.
+  // Ruim: cada variável privada é usada por um ou outro grupo de métodos.
+  // Isso é uma evidência clara de que a classe está mantendo mais do que uma única responsabilidade.
+  // Se eu precisar apenas criar o serviço para obter as transactions para um user, 
+  // Ainda sou obrigado a passar e a instância do emailSender.
+
   constructor(
     private readonly db: Database,
     private readonly emailSender: EmailSender,
