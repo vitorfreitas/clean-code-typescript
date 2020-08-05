@@ -2214,7 +2214,7 @@ async function downloadPage(url: string, saveTo: string): Promise<string> {
   return response;
 }
 
-// somewhere in an async function (Alguma parte de uma função async)
+// Alguma parte de uma função async
 try {
   const content = await downloadPage(
     'https://en.wikipedia.org/wiki/Robert_Cecil_Martin',
